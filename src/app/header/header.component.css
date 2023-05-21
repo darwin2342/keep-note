@@ -1,0 +1,17 @@
+.mat-toolbar {
+  background-color: #133280;
+}
+
+.mat-icon {
+  color: white;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.nav-icons {
+  margin-left: auto;
+}

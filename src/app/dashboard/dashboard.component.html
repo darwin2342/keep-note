@@ -1,0 +1,45 @@
+<div class="container">
+  <app-add-note (noteAdded)="onNoteAdded($event)"></app-add-note>
+
+  <div class="search-container">
+    <mat-form-field appearance="fill">
+      <input matInput type="text" class="input-field" placeholder="Search notes" [(ngModel)]="searchText"
+        (input)="onSearchTextChanged()" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="notes">
+    <div class="note note-card" *ngFor="let note of notes">
+      <h3>
+        {{ note.title }}
+        <mat-icon *ngIf="note.priority === 'Critical'" style="color: #f15381" class="note-priority">gpp_maybe</mat-icon>
+        <mat-icon *ngIf="note.priority === 'High'" style="color: #f15381" class="note-priority">arrow_circle_up</mat-icon>
+        <mat-icon *ngIf="note.priority === 'Medium'" style="color: #5363bd" class="note-priority">remove_circle_outline</mat-icon>
+        <mat-icon *ngIf="note.priority === 'Low'" style="color: #5363bd" class="note-priority">arrow_circle_down</mat-icon>
+
+      </h3>
+      <span class="note-reminderDate">{{ note.reminderDate | date:'yyyy-MM-dd h:mm a' }}</span>
+      <div class="note-details">
+        <p class="note-content">{{ note.content }}</p>
+        <span class="note-category">{{ note.category }}</span>
+      </div>
+      <div class="actions">
+        <button class="button-bookmark">
+          <i class="material-icons">bookmark</i>
+        </button>
+        <button class="button-edit" (click)="editNote(note.id)">
+          <i class="material-icons">edit</i>
+        </button>
+        <button class="button-delete" (click)="deleteNoteById(note.id)">
+          <i class="material-icons">delete</i>
+        </button>
+        <button class="button-notification">
+          <i class="material-icons">notifications_none</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <button mat-fab color="primary" class="add-note-button" (click)="onAddNoteClicked()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

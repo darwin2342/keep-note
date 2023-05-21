@@ -1,0 +1,66 @@
+.add-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.add-note form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 550px;
+  padding: 20px 40px;
+  margin: 30px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.add-note mat-form-field {
+  width: 75%;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: WHITE;
+}
+
+.add-note input:focus,
+.add-note textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #444fbd;
+}
+
+.add-note .form-group {
+  margin-bottom: 20px;
+}
+
+.add-note button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #a6a6a6;
+  margin-right: 10px;
+}
+
+.add-note button[type="submit"]:hover {
+  background-color: #3a42a8;
+  color: white;
+}
+
+.add-note button[type="submit"] mat-icon {
+  font-size: 24px;
+}
+
+.add-note .form-group.mat-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-note mat-radio-button {
+  margin-right: 10px;
+}
